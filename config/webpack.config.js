@@ -3,7 +3,8 @@ const webpack = require("webpack")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: "./src/index.ts",
+  devtool: 'inline-source-map',
   output: {
     path: path.resolve(__dirname, "../dist"),
     filename: "bundle.js",
@@ -15,6 +16,11 @@ module.exports = {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"],
       },
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
     ],
   },
   plugins: [
@@ -23,5 +29,8 @@ module.exports = {
       inject: "body",
       publicPath: "./"
     })
-  ]
+  ],
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
+  },
 }
