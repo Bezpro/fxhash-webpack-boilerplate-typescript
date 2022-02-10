@@ -1,12 +1,12 @@
+import * as P5 from "p5";
+
 import FxHash from "./fxhash";
+import P5JS from "./p5js";
+
+const containerElement = document.getElementById('p5-container');
 
 const fxHash = new FxHash();
 const hash = fxHash.fxhash;
-const fxrand = fxHash.fxrand; 
+const fxrand = fxHash.fxrand;
 
-const container = document.createElement("div")
-container.innerText = `
-  random hash: ${hash}\n
-  some pseudo random values: [ ${fxrand()}, ${fxrand()}, ${fxrand()}, ${fxrand()}, ${fxrand()},... ]\n
-`
-document.body.prepend(container)
+new P5(new P5JS(fxrand).sketch, containerElement);
