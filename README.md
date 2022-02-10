@@ -24,7 +24,7 @@ You will need to have [nodejs](https://nodejs.org/) installed.
 
 Clone the repository on your machine and move to the directory
 ```sh
-$ git clone https://github.com/fxhash/fxhash-webpack-boilerplate.git your_folder && cd your_folder
+$ git clone https://github.com/Bezpro/fxhash-webpack-boilerplate-typescript.git your_folder && cd your_folder
 ```
 
 Install the packages required for the local environment
